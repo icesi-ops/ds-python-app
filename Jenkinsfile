@@ -41,5 +41,13 @@ spec:
             
             }
         }
+        stage('Upload artifact'){
+            post {
+                success {
+                    archiveArtifacts artifacts: 'artifacts/*', fingerprint: true
+                }
+                
+            }
+        }
     }
 }
